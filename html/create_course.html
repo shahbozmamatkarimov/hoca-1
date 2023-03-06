@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Create course</title>
+    <link rel="stylesheet" href="../css/create_course.css">
+</head>
+
+<body>
+
+    <div class="topnav" id="topnav">
+        <div class="place">
+            <a class="active" href="../index.html">Main menu</a>
+            <a href="#news" id="lists">About</a>
+            <a href="./course_list.html">Courses list</a>
+            <a class="create">Create course</a>
+            <a href="./users_list.html">Users</a>
+        </div>
+    </div>
+
+    <form autocomplete='off' class='form'>
+        <div class='control'>
+            <h1>
+                Add course
+            </h1>
+        </div>
+        <label for="title">Title</label>
+        <div class='control block-cube block-input'>
+            <input name='title' id="title" type='text' onchange="title1(this.value)">
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+        <label for="type">Select type</label>
+        <div class='control block-cube block-input'>
+            <select name='type' type='type' id="type" onchange="type1(this.value)">
+                <option value="Web development">Web development</option>
+                <option value="Web design">Web design</option>
+                <option value="Web technology">Web technology</option>
+                <option value="Design">Design</option>
+                <option value="IOS">IOS</option>
+            </select>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+        <label for="price">Price</label>
+        <div class='control block-cube block-input'>
+            <input name='price' type='price' id="price" onchange="price1(this.value)">
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+        
+        <label for="img">Img URL <a href="https://www.google.com/search?q=programming+icons&tbm=isch&ved=2ahUKEwiys9i9guD7AhW-DRAIHQEuAs0Q2-cCegQIABAA&oq=programming+icons&gs_lcp=CgNpbWcQAzIFCAAQgAQyBQgAEIAEMgUIABCABDIGCAAQBRAeMgYIABAFEB4yBggAEAUQHjIGCAAQCBAeMgYIABAIEB4yBggAEAgQHjIHCAAQgAQQGDoECCMQJzoJCAAQgAQQChAYUM8RWN4YYLUaaABwAHgAgAGJAYgBswWSAQMwLjaYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=7JmMY7KNM76bwPAPgdyI6Aw&bih=746&biw=1534">help</a></label>
+        <div class='control block-cube block-input'>
+            <input name='img' type='img' id="img" onchange="img1(this.value)">
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+        <button class='btn block-cube block-cube-hover' type='button' style="text-align:center;" onclick="button1()">
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='text'>
+                SEND
+            </div>
+        </button>
+    </form>
+    <script src="../js/create_course.js"></script>
+</body>
+
+</html>

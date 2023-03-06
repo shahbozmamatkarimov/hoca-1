@@ -1,0 +1,101 @@
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+th,
+td {
+    width: 200px;
+    text-align: center;
+}
+
+#id {
+    width: 30px;
+}
+
+.fa-edit {
+    color: blue;
+}
+
+.fa-trash {
+    color: red;
+}
+
+img {
+    width: 200px;
+    height: 100px
+}
+
+.main div {
+    margin: 20px;
+    border: 1px solid rgba(128, 128, 128, 0.658);
+    box-shadow: 10px 10px 10px grey;
+}
+
+.main div:hover {
+    box-shadow: none;
+    transition: 1s;
+}
+
+i {
+    color: black;
+    padding: 10px;
+}
+
+b {
+    display: none;
+}
+
+table {
+    font-size: 25px;
+    padding: 20px;
+    width: 100%;
+}
+
+.menu {
+    background-color: grey;
+}
+
+.main .menu {
+    box-shadow: 10px 10px 10px black;
+}
+
+/* -------------------------------- */
+
+.topnav {
+    text-align: center;
+    margin-bottom: 50px;
+    overflow: hidden;
+    background-color: #333;
+    width: 100%;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.place,
+.topnav h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.create {
+    background-color: #04AA6D;
+}
+
+.topnav .create:hover {
+    color: white;
+    background-color: #04AA6D;
+}

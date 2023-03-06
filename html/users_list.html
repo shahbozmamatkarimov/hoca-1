@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #main {
+            text-align: center;
+        }
+
+        #main h1 {
+            display: inline-block;
+            padding: 10px;
+            font-size: 25px;
+            width: 15%;
+        }
+
+        #main div {
+            margin: 25px;
+            border: 1px solid grey;
+            box-shadow: 10px 10px 10px grey;
+        }
+
+        #main div:hover {
+            box-shadow: none;
+            transition: 0.5s;
+        }
+
+        #main #menu:hover {
+            box-shadow: none;
+            transition: 0.5s;
+        }
+
+        #main #menu {
+            background-color: grey;
+            box-shadow: 10px 10px 10px black;
+            color: white;
+        }
+
+        i {
+            color: red;
+        }
+
+        b {
+            display: none;
+        }
+
+        /* ---------------------------- */
+
+        .topnav {
+            text-align: center;
+            margin-bottom: 50px;
+            overflow: hidden;
+            background-color: #333;
+            width: 100%;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 20px;
+            text-decoration: none;
+            font-size: 25px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .place,
+        .topnav h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .create {
+            background-color: #04AA6D;
+        }
+
+        .topnav .create:hover {
+            color: white;
+            background-color: #04AA6D;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topnav" id="topnav">
+        <div class="place">
+            <a class="active" href="../index.html">Main menu</a>
+            <a href="#news" id="lists">About</a>
+            <a href="./course_list.html">Courses list</a>
+            <a href="./create_course.html">Create course</a>
+            <a class="create">Users</a>
+        </div>
+    </div>
+
+    <div id="main">
+        <div id="menu">
+            <h1>name</h1>
+            <h1>surname</h1>
+            <h1>password</h1>
+            <h1>email</h1>
+            <h1>degree</h1>
+        </div>
+    </div>
+    <script>
+        let local = JSON.parse(localStorage.getItem('objects'))
+        let user1 = JSON.parse(localStorage.getItem('user1'))
+        let password = atob(user1.password)
+        for (let i of local) {
+            if (atob(i.password) != password) {
+                let div = document.createElement('div')
+                div.innerHTML = `
+                <h1>${atob(i.name)}</h1>
+                <h1>${atob(i.surname)}</h1>
+                <h1>${atob(i.password)}</h1>
+                <h1>${atob(i.email)}</h1>
+                <h1>${i.degree}</h1>
+                <i class="fa fa-trash" onclick="delete1(this)"><b>${atob(i.password)}</b></i>
+            `
+                main.append(div)
+            }
+        }
+
+        function delete1(val) {
+            let b = val.querySelector('b')
+            for (let i in local) {
+                if (atob(local[i].password) != password) {
+                    if (atob(local[i].password) == b.innerHTML) {
+                        local.splice(i, 1)
+                    }
+                }
+            }
+            localStorage.setItem('objects', JSON.stringify(local))
+            location.reload()
+        }
+    </script>
+</body>
+
+</html>

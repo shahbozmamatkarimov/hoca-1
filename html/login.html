@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Courses/login</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+    <div class="place">
+        <a class="active" href="../index.html">Main menu</a>
+        <a href="#news">About Courses</a>
+        <a class="l">Login</a>
+        <a href="./register.html">Register</a>
+    </div>
+    <div class="main">
+        <div class="form">
+            <h1>Welcome to <i>PROGRAMMING</i>?!</h1>
+            <form class="form_login">
+                <input type="text" id="nametext" placeholder="First name" onchange="name1(this.value)"><br><br><br>
+                <input type="email" id="emailtext" placeholder="E-mail" onchange="email1(this.value)"><br><br><br>
+                <input type="email" id="emailtext1" placeholder="Confirm your E-mail"
+                    onchange="email2(this.value)"><br><br><br>
+                <input type="button" id="submit" value="LOG IN" onclick="change()"><br><br><br>
+            </form>
+        </div>
+    </div>
+    <script src="../js/login.js"></script>
+</body>
+
+</html>

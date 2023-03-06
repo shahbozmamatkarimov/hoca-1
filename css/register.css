@@ -1,0 +1,112 @@
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-image: url("https://questionpapershub.com/wp-content/uploads/2020/10/top-10-programming-languages.png")
+}
+
+#dropdown p {
+    display: none;
+    border: 1px solid grey;
+    margin-top: -17px;
+    width: 200px;
+}
+
+p:hover {
+    background-color: grey;
+    color: white;
+}
+
+i {
+    color: rgb(255, 0, 0);
+    font-size: 25px;
+}
+
+form {
+    outline: 800px solid rgba(0, 0, 255, 0.267);
+    font-weight: bold;
+    background-color: rgba(128, 128, 128, 0.808);
+    width: 25%;
+    margin: 45px 620px 45px 620px;
+    font-size: 30px;
+    padding: 70px;
+    border: 15px solid black;
+}
+
+input,
+select {
+    font-size: 25px;
+    padding: 5px;
+}
+
+input {
+    width: 100%;
+}
+
+input[type="submit"] {
+    background-color: aqua;
+    border: none;
+    color: white;
+    font-size: 50px;
+}
+
+select {
+    width: 102%;
+}
+
+#dropdown {
+    margin-top: 17px;
+    margin-left: 150px;
+}
+
+#icon2 {
+    display: none;
+    float: right;
+}
+
+#submit {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 128, 0, 0.434);
+    font-size: 25px;
+    color: white;
+}
+
+#sumbit:hover {
+    background-color: green;
+}
+
+span {
+    margin-right: -50px;
+    margin-top: -40px;
+    float: right;
+}
+
+.place {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: -20px;
+}
+
+.place a {
+    color: white;
+    margin: -5px;
+    border: 1px solid black;
+    text-decoration: none;
+    background-color: red;
+    padding: 20px;
+}
+
+.place a:hover {
+    background-color: darkgrey;
+    color: black;
+}
+
+.place .r {
+    background-color: green;
+}
+
+.place .r:hover {
+    background-color: green;
+    color: white;
+}

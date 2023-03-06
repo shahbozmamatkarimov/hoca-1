@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Courses/register</title>
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="place">
+        <a class="active" href="../index.html">Main menu</a>
+        <a href="#news">About Courses</a>
+        <a href="./login.html">Login</a>
+        <a class="r">Register</a>
+    </div>
+    <form class="register_form">
+        <label for="nametext">Full Name <i>*</i></label><br><br>
+        <input type="text" id="nametext" placeholder="First" onchange="name1(this.value)" required>
+        <input type="text" id="surnametext" placeholder="Last" onchange="surname1(this.value)" required><br><br>
+        <label for="emailtext">Email <i>*</i></label><br><br>
+        <input type="email" id="emailtext" onchange="email1(this.value)" required><br><br>
+        <label for="name1">Password <i>*</i></label><br><br>
+        <input type="password" id="password" required>
+        <span id="icon1"><i class="fa fa-eye-slash" onclick="change()"></i></span>
+        <span id="icon2"><i class="fa fa-eye" onclick="change()"></i></span><br>
+        <label for="degree">Degree</label><br><br>
+        <select id="degree" onchange="choice()">
+            <option name="option" value="0">begginer</option>
+            <option name="option" value="1">junior</option>
+            <option name="option" value="2">middle</option>
+            <option name="option" value="3">senior</option>
+        </select><br><br>
+        <input type="submit" value="REGISTER" id="submit">
+    </form>
+    <script>
+
+
+
+
+        let name = '', surname = '', email = '', text = '', bool = false
+        name1 = (value) => {
+            name = value
+        }
+        surname1 = (value) => {
+            surname = value
+        }
+        email1 = (value) => {
+            email = value
+        }
+        text1 = (value) => {
+            text = value
+        }
+        submit.addEventListener('click',
+            function res() {
+
+                if (name == '' || name == null) {
+                    nametext.setAttribute('placeholder', 'Enter name')
+                    nametext.style = 'background-color: red;'
+                    setTimeout(() => {
+                        nametext.style = 'background-color: white; color: black;'
+                    }, 1000)
+                } else {
+                    if (surname == '' || surname == null) {
+                        surnametext.setAttribute('placeholder', 'Enter surname')
+                        surnametext.style = 'background-color: red;'
+                        setTimeout(() => {
+                            surnametext.style = 'background-color: white; color: black;'
+                        }, 1000)
+                    } else {
+                        if (email.lastIndexOf('.') - email.lastIndexOf('@') < 2 && email.length < 8) {
+                            emailtext.setAttribute('placeholder', 'Enter email')
+                            emailtext.style = 'background-color: red;'
+                            setTimeout(() => {
+                                emailtext.style = 'background-color: white; color: black;'
+                            }, 1000)
+                        } else {
+                            let passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+                            let x = password.value
+                            if (x.match(passw) == null || x.match(passw) == false) {
+                                password.setAttribute('placeholder', 'Enter password')
+                                password.style = 'background-color: red;'
+                                setTimeout(() => {
+                                    password.style = 'background-color: white; color: black;'
+                                }, 1000)
+                            } else {
+                                bool = true
+                            }
+                        }
+                    }
+                }
+
+            })
+        let chois = 'begginer'
+        function choice() {
+            chois = degree.value
+            if (chois == 0) {
+                chois = 'begginer'
+            } else if (chois == 1) {
+                chois = 'junior'
+            } else if (chois == 2) {
+                chois = 'middle'
+            } else {
+                chois = 'senior'
+            }
+        }
+        function change() {
+            if (icon2.style.display == 'none') {
+                password.setAttribute('type', 'text');
+                icon1.style.display = 'none';
+                icon2.style.display = 'block';
+            }
+            else {
+                password.setAttribute('type', 'password');
+                icon1.style.display = 'block';
+                icon2.style.display = 'none';
+            }
+        }
+
+        let form = document.querySelector('.register_form')
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            let { nametext, surnametext, emailtext, password } = form
+            let store = {
+                name: btoa(nametext.value),
+                surname: btoa(surnametext.value),
+                email: btoa(emailtext.value),
+                password: btoa(password.value),
+                degree: chois
+            }
+            let massiv = []
+            let objects = JSON.parse(localStorage.getItem('objects'));
+            if(objects){
+                for(let i of objects){
+                    massiv.push(i)
+                }
+            }
+            massiv.push(store)
+            localStorage.setItem('objects', JSON.stringify(massiv));
+            location.href = './login.html'
+        })
+    </script>
+</body>
+
+</html>
