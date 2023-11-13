@@ -1,0 +1,10 @@
+import express, { Router } from 'express';
+import UserController from './functions.contr.js';
+import authMiddleware from '../../middleware/auth.js';
+const functionsRouter: Router = express.Router();
+functionsRouter.get('/liked', authMiddleware, UserController.getLiked);
+functionsRouter.get('/bought', authMiddleware, UserController.getBought);
+functionsRouter.get('/seved/posts', authMiddleware, UserController.getSavedStore);
+functionsRouter.get('/stores', authMiddleware, UserController.getStores);
+functionsRouter.get('/view/post', authMiddleware, UserController.getViewedPosts);
+export default functionsRouter;
